@@ -10,8 +10,16 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
+        body {
+            font-family: 'Raleway'
+        }
     </style>
     <title>soba-res</title>
 </head>
@@ -34,7 +42,6 @@
             </li>
             <li class="fs-4 menu-item selector"><a href="./page/about.html">ABOUT</a></li>
             <li class="dropdown fs-4 menu-item selector">
-                <a href="./page/hiring.html">MENU</a>
                 <ul class="submenu">
                     <li class="fs-4"><a href="./page/menu.html">HIRING</a></li>
                     <li>
@@ -53,17 +60,25 @@
         <section class="section1">
             <img src="./assets/logo.png" alt="logo">
         </section>
+
         <section class="section2">
-            <h2 class="d-lg-block d-none">Be Part of Our Team! <br>
-                We're Recruiting Part-Time Lunch Associates!
-            </h2>
-            <h2 class="d-block d-lg-none">Join Our Team! <br>Hiring Part-Time Lunch Staff
-            </h2>
-            <div class="under-bar1"></div>
-            <button type="button">
-                <a href="./page/about.html">Click here to learn more ></a>
-            </button>
+            <div class="overlay"></div>
+            <div class="sec2-flex">
+                <img src="assets/ramenworker.jpg" alt="ramenworker" class="ramenworker d-none d-sm-block">
+                <div class="recrute">
+                    <h2 class="d-lg-block d-none">Be Part of Our Team! <br>
+                        We're Recruiting Part-Time Lunch Associates!
+                    </h2>
+                    <h2 class="d-block d-lg-none">Join Our Team! <br>Hiring Part-Time Lunch Staff
+                    </h2>
+                    <div class="under-bar1"></div>
+                    <button type="button">
+                        <a href="./">Click here to learn more ></a>
+                    </button>
+                </div>
+            </div>
         </section>
+
         <section class="section3">
             <h2>MENU</h2>
             <div class="under-bar2"></div>
@@ -86,7 +101,7 @@
             <!-- Form -->
             <h2>Contact Us</h2>
             <div class="under-bar2"></div>
-            <form action="#" method="post" id="contact-form">
+            <form action="./php/contact.php" method="post" id="contact-form" enctype="multipart/form-data">
                 <div id="name-field">
                     <label for="name-input">Name</label>
                     <input type="text" id="name-input" name="name" required>
@@ -111,14 +126,14 @@
                 </div>
                 <div id="message-field">
                     <label for="message-input" required>Message</label>
-                    <textarea name="massage" id="message-input" cols="300" rows="10"></textarea>
+                    <textarea name="message" id="message-input" cols="300" rows="10"></textarea>
                 </div>
                 <button type="submit" id="submit">Submit</button>
             </form>
         </section>
     </main>
     <footer>
-        <h2>Kintoki Ramen</h2>
+        <h2>KINTARO RAMEN</h2>
         <ul>
             <li>Postal Code: V6G 1C9</li>
             <li>788 Denman St, Vancouver BC</li>
