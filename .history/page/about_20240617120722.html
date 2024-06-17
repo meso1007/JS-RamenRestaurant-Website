@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
+        body {
+            font-family: 'Raleway'
+        }
+    </style>
+    <title>soba-res</title>
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox" id="checkbox-label">
+            <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 -960 960 960" id="nav-svg">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" id="nav-svg-path"></path>
+            </svg>
+        </label>
+        <ul class="nav-bar">
+            <li class="fs-4 menu-item selector"><a href="../index.html">HOME</a></li>
+            <li class="fs-4 menu-item selector">
+                <a href="./menu.html">MENU</a>
+                <ul class="submenu">
+                </ul>
+            </li>
+            <li class="fs-4 menu-item selector"><a href="./page/about.html"
+                    style="color: rgba(208, 34, 34, 0.838)">ABOUT</a></li>
+            <li class="dropdown fs-4 menu-item selector">
+                <ul class="submenu">
+                    <li class="fs-4"><a href="./page/menu.html">HIRING</a></li>
+                    <li>
+                        <a href="https://www.instagram.com/sh02__nmi/?igsh=MXBpbG55OG84aHBvMg%3D%3D&utm_source=qr">
+                            <img src="./assets/instagram.png" alt="instagram"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=100065179921249&sk=about">
+                            <img src="./assets/facebook.png" alt="facebook"></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <section class="section1">
+            <img class="logo1" src="../assets/logo.png" alt="logo">
+        </section>
+        <section class="section2">
+            <h2 class="big-h2 d-none d-sm-block">ABOUT <br>KINTARO <br>RAMEN</h2>
+            <h2 class="small-h2 d-flex d-sm-none">ABOUT KINTARO RAMEN</h2>
+            <div class="explain">
+                <p>KINTARO RAMEN, the pioneer of Tori-Paitan (Creamy Chicken broth) opened its first door in 2013 in
+                    Vancouver, Canada. Now many branches in region.
+                    <br><br>
+                    Chicken is one of the universal foods that you can find in almost every culture, every country. This
+                    is how our signature Tori-Paitan (Creamy Chicken broth) was inspired and created, and being loved by
+                    many people from different background and cultures.
+                    <br><br>
+                    We wish to continue to spread KINTARO RAMEN more and more.
+                </p>
+            </div>
+        </section>
+        <section class="section3">
+
+            <div class="hiring">
+                <div class="hiring-info">
+                    <h3>TEAM ASSOCIATE</h3>
+                    <p>You are a cheerful, energetic and supportive individual who has good learning attitude and a
+                        great team rapport. If you have experience that's a bonus!
+                        <br><br>
+                        Managers and other employees will work hard with you to provide and guide you throughout the
+                        training process. We work hard to aim a positive coaching environment to help you develop to
+                        your full potential at KINTARO RAMEN.
+                        <br><br>
+                        You are the key to make our customers happy and enjoy their moment dining at KINTARO RAMEN.
+                    </p>
+                </div>
+                <div class="hiring-form">
+                    <form action="../php/hiring.php" method="post" id="contact-form" enctype="multipart/form-data">
+                        <div id="name-field">
+                            <label for="name-input">Name</label>
+                            <input type="text" id="name-input" name="name" required>
+                        </div>
+                        <div id="email-field">
+                            <label for="email-input">Email Address</label>
+                            <input type="text" id="email-input" name="email" required>
+                        </div>
+                        <div id="phone-field">
+                            <label for="phone-input" required>Phone Number</label>
+                            <input type="tell" id="phone-input" name="phone">
+                        </div>
+                        <div id="dropdown-field">
+                            <label for="contact-select" required>Position</label>
+                            <select name="position" id="contact-select">
+                                <option value="reasons" selected>--Select--</option>
+                                <option value="ramen-chef">Ramen Chef</option>
+                                <option value="line-cook">Line Cook</option>
+                                <option value="server-host">Server Host</option>
+                                <option value="prep-cook">Prep Cook</option>
+                            </select>
+                        </div>
+                        <div id="message-field">
+                            <label for="message-input" required>Tell us about yourself</label>
+                            <textarea name="message" id="message-input" cols="300" rows="10"></textarea>
+                        </div>
+                        <div id="file-field">
+                            <label for="file-input">Submit resume</label>
+                            <input type="file" id="file-input" name="resume">
+                        </div>
+                        <button type="submit" id="submit">
+                            Submit
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <h2>KINTARO RAMEN</h2>
+        <ul>
+            <li>Postal Code: V6G 1C9</li>
+            <li>788 Denman St, Vancouver BC</li>
+            <li>Closed: Every Monday</li>
+        </ul>
+        <a class="tomap"
+            href="https://www.google.com/maps/place/%E9%87%91%E5%A4%AA%E9%83%8E%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3/@49.2915486,-123.1375605,17z/data=!3m1!4b1!4m6!3m5!1s0x548671883ef18c25:0x916d6d87117b7314!8m2!3d49.2915486!4d-123.1349856!16s%2Fm%2F04yjq63?entry=ttu">
+            For business hours and temporary closures, please check here.</a>
+        <div class="footer-buttons">
+            <button><a href="tel:+16046827568"><img src="../assets/phone.png"
+                        alt="phonenumber">+16046827568</a></button>
+            <br>
+            <button><a
+                    href="https://www.google.com/maps/place/%E9%87%91%E5%A4%AA%E9%83%8E%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3/@49.2915486,-123.1375605,17z/data=!3m1!4b1!4m6!3m5!1s0x548671883ef18c25:0x916d6d87117b7314!8m2!3d49.2915486!4d-123.1349856!16s%2Fm%2F04yjq63?entry=ttu">
+                    <img src="../assets/map.png" alt="map">MAP</a>
+            </button>
+        </div>
+        <p class="last">&copy; 2024 Kinataro Ramen</p>
+    </footer>
+</body>
+
+</html>
