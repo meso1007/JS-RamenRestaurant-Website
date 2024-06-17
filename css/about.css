@@ -1,0 +1,384 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Raleway', Helvetica, sans-serif;
+    --secondary-color: rgba(8, 2, 32, 0.509);
+    --third-color: rgba(208, 34, 34, 0.838);
+    --contrast-color: #ffffffec;
+    --third-color: gray;
+    --unique-color: #d5bb50;
+    font-size: 16px;
+}
+
+body {
+    background-image: url(../assets/ramen.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 90%;
+    background-attachment: fixed;
+    font-family: 'Raleway', Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    height: 2000px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#checkbox {
+    display: none;
+}
+
+#checkbox-label {
+    cursor: pointer;
+    position: absolute;
+    top: 1vh;
+    right: 6vw;
+}
+
+#nav-svg {
+    display: none;
+    width: 1.5rem;
+    fill: var(--contrast-color);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: rgba(8, 2, 32, 0.509);
+    padding-top: 1rem;
+    top: 135%;
+    left: -50%;
+    width: 250%;
+    transition: opacity 0.3s ease-in-out;
+    /* how can I delay disappearing without JS */
+}
+
+.submenu li {
+    margin-bottom: 1rem;
+}
+
+.submenu img {
+    width: 3rem;
+}
+
+.nav-bar {
+    font-weight: 300;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(8, 2, 32, 0.509);
+    padding: 0.8rem;
+    margin-top: 4vh;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    border-radius: 10px;
+}
+
+.menu-item a {
+    color: #ffffff;
+}
+
+
+.selector:hover .selector a {
+    color: rgba(244, 129, 129, 0.724) !important;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+/* main */
+main {
+    flex: 1;
+
+}
+
+.section1 {
+    width: 100vw;
+    position: relative;
+    text-align: center;
+    top: 3%;
+    padding: 9rem;
+    display: flex;
+    justify-content: center;
+}
+
+.section1 img {
+    width: 50%;
+}
+
+.section2 {
+    width: 100vw;
+    position: relative;
+    text-align: center;
+    top: 3%;
+    padding: 9rem;
+    background-color: var(--contrast-color);
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5rem;
+}
+
+.section2 h2 {
+    position: relative;
+    display: inline-block;
+    padding: 1rem;
+    text-align: left;
+}
+
+.big-h2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -1rem;
+    bottom: 0;
+    width: 3px;
+    background-color: black;
+}
+
+.small-h2 {
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    border: none;
+    border-bottom: 3px solid black;
+    margin-bottom: 5rem;
+}
+
+.explain {
+    font-size: 1.2rem;
+}
+
+.section3 {
+    text-align: center;
+    width: 100vw;
+    position: relative;
+    text-align: center;
+    padding: 9rem;
+    top: 3%;
+    background-color: rgba(228, 228, 228, 0.967);
+    gap: 5rem;
+    margin: 4rem 0;
+}
+
+.hiring {
+    padding-top: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    gap: 4rem;
+}
+
+.hiring p {
+    font-size: 1.2rem;
+}
+
+/* Grid Areas for Items (elements) */
+#contact-form {
+    grid-template-columns: 1fr 1fr;
+}
+
+.hiring-form {
+    border-left: 3px solid black;
+}
+
+#name-field {
+    grid-area: name;
+    display: flex;
+}
+
+#email-field {
+    grid-area: email;
+    display: flex;
+}
+
+#phone-field {
+    grid-area: phone;
+    display: flex;
+}
+
+#dropdown-field {
+    grid-area: dropdown;
+    display: flex;
+}
+
+#message-field {
+    grid-area: message;
+    display: flex;
+}
+
+#file-field {
+    grid-area: file;
+    display: flex;
+}
+
+#submit {
+    display: flex;
+    grid-area: submit;
+    border: none;
+    background-color: #d5bb50;
+    color: #ffffff;
+    height: 3rem;
+}
+
+#contact-form label,
+#contact-form input,
+#contact-form select,
+#contact-form textarea,
+#contact-form button {
+    margin: 4px;
+    padding: 3px;
+    display: block;
+    width: 100%;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form select {
+    margin-bottom: 10px;
+    height: 3rem;
+}
+
+
+
+
+/* footer */
+footer {
+    background-color: #fef3cb;
+    text-align: center;
+    display: block;
+    padding: 2rem 0;
+    position: relative;
+    flex-shrink: 0;
+    margin: 4rem 0;
+
+}
+
+.footer h2 {
+    border: none;
+    border-bottom: 3px solid black;
+    margin-bottom: 5rem;
+}
+
+.tomap {
+    color: black;
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+footer button {
+    background-color: var(--unique-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    border: none;
+}
+
+footer button a {
+    color: white;
+}
+
+footer button a img {
+    width: 2rem;
+}
+
+.last {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    opacity: 50;
+}
+
+@media screen and (max-width: 767px) {
+
+    main {
+        overflow: hidden;
+    }
+
+    .section1 {
+        width: 100vw;
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    .section1 img {
+        width: 80%;
+    }
+
+    #nav-svg {
+        display: block;
+        width: 2rem;
+    }
+
+    .nav-bar {
+        display: block;
+        position: fixed;
+        font-size: 2rem;
+        margin: 0;
+        top: 35px;
+        left: -100vw;
+        width: 100vw;
+        height: 100dvh;
+        background-color: var(--secondary-color);
+        text-align: center;
+        z-index: 2;
+        transition: all 0.5s;
+    }
+
+    .menu-item {
+        display: block;
+        margin: 2rem 0;
+    }
+
+    .menu-item a {
+        font-size: 1.25rem;
+    }
+
+    #checkbox:checked~.nav-bar {
+        left: 0;
+    }
+
+    .dropdown:hover .submenu {
+        display: none;
+    }
+
+    .section2 {
+        display: block;
+
+    }
+}

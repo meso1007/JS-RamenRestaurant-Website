@@ -10,8 +10,16 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
+        body {
+            font-family: 'Raleway'
+        }
     </style>
     <title>soba-res</title>
 </head>
@@ -25,25 +33,24 @@
             </svg>
         </label>
         <ul class="nav-bar">
-            <li class="fs-4 menu-item"><a href="#" id="current">HOME</a></li>
-            <li class="fs-4 menu-item">
-                <a href="#">MENU</a>
+            <li class="fs-4 selector"><a href="#" style="color: rgba(208, 34, 34, 0.838)">HOME</a></li>
+            <li class="fs-4 menu-item selector">
+                <a href="./page/menu">MENU</a>
                 <ul class="submenu">
 
                 </ul>
             </li>
-            <li class="fs-4 menu-item"><a href="#">ABOUT</a></li>
-            <li class="dropdown fs-4 menu-item">
-                <a href="#">CONTACT</a>
+            <li class="fs-4 menu-item selector"><a href="./page/about.html">ABOUT</a></li>
+            <li class="dropdown fs-4 menu-item selector">
                 <ul class="submenu">
-                    <li class="fs-4"><a href="#">HIRING</a></li>
+                    <li class="fs-4"><a href="./page/menu.html">HIRING</a></li>
                     <li>
                         <a href="https://www.instagram.com/sh02__nmi/?igsh=MXBpbG55OG84aHBvMg%3D%3D&utm_source=qr">
-                            <img src="./assets/insta-removebg-preview.webp" alt="instagram"></a>
+                            <img src="./assets/instagram.png" alt="instagram"></a>
                     </li>
                     <li>
                         <a href="https://www.facebook.com/profile.php?id=100065179921249&sk=about">
-                            <img src="./assets/facebook-removebg-preview.webp" alt="facebook"></a>
+                            <img src="./assets/facebook.png" alt="facebook"></a>
                     </li>
                 </ul>
             </li>
@@ -53,18 +60,28 @@
         <section class="section1">
             <img src="./assets/logo.png" alt="logo">
         </section>
+
         <section class="section2">
-            <h2>Be Part of Our Team! <br>
-                We're Recruiting Part-Time Lunch Associates!
-            </h2>
-            <div class="under-bar"></div>
-            <button type="button">
-                <a href="./page/about.html">Click here to learn more ></a>
-            </button>
+            <div class="overlay"></div>
+            <div class="sec2-flex">
+                <img src="assets/ramenworker.jpg" alt="ramenworker" class="ramenworker d-none d-sm-block">
+                <div class="recrute">
+                    <h2 class="d-lg-block d-none">Be Part of Our Team! <br>
+                        We're Recruiting Part-Time Lunch Associates!
+                    </h2>
+                    <h2 class="d-block d-lg-none">Join Our Team! <br>Hiring Part-Time Lunch Staff
+                    </h2>
+                    <div class="under-bar1"></div>
+                    <button type="button">
+                        <a href="./">Click here to learn more ></a>
+                    </button>
+                </div>
+            </div>
         </section>
+
         <section class="section3">
             <h2>MENU</h2>
-            <div class="under-bar"></div>
+            <div class="under-bar2"></div>
             <div class="menus d-md-flex py-2 justify-content-evenly align-items-center">
                 <div class="eatin">
                     <p>View our dine-in menu here</p>
@@ -82,7 +99,9 @@
         </section>
         <section class="section4">
             <!-- Form -->
-            <form action="#" method="post" id="contact-form">
+            <h2>Contact Us</h2>
+            <div class="under-bar2"></div>
+            <form action="./php/contact.php" method="post" id="contact-form" enctype="multipart/form-data">
                 <div id="name-field">
                     <label for="name-input">Name</label>
                     <input type="text" id="name-input" name="name" required>
@@ -92,28 +111,46 @@
                     <input type="text" id="email-input" name="email" required>
                 </div>
                 <div id="phone-field">
-                    <label for="phone-input">Phone Number</label>
-                    <input type="tell" id="phone-input" name="name">
+                    <label for="phone-input" required>Phone Number</label>
+                    <input type="tell" id="phone-input" name="phone">
                 </div>
                 <div id="dropdown-field">
-                    <label for="reason-select">Reason</label>
-                    <select name="reason" id="reason-select">
-                        <option value="reasons" selected>Please choose the reason</option>
-                        <option value="friend">Want to be a Friend</option>
-                        <option value="job">Request a Job</option>
-                        <option value="interest">Just Interest</option>
+                    <label for="contact-select" required>Reason for contact</label>
+                    <select name="reason" id="contact-select">
+                        <option value="reasons" selected>Please choose the reason for contact</option>
+                        <option value="food">About Food</option>
+                        <option value="hiring">About Hiring Info</option>
+                        <option value="service">About Service</option>
+                        <option value="others">About Others</option>
                     </select>
                 </div>
                 <div id="message-field">
-                    <label for="message-input">Message</label>
-                    <textarea name="massage" id="message-input" cols="300" rows="10"></textarea>
+                    <label for="message-input" required>Message</label>
+                    <textarea name="message" id="message-input" cols="300" rows="10"></textarea>
                 </div>
                 <button type="submit" id="submit">Submit</button>
             </form>
         </section>
     </main>
     <footer>
-
+        <h2>KINTARO RAMEN</h2>
+        <ul>
+            <li>Postal Code: V6G 1C9</li>
+            <li>788 Denman St, Vancouver BC</li>
+            <li>Closed: Every Monday</li>
+        </ul>
+        <a class="tomap"
+            href="https://www.google.com/maps/place/%E9%87%91%E5%A4%AA%E9%83%8E%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3/@49.2915486,-123.1375605,17z/data=!3m1!4b1!4m6!3m5!1s0x548671883ef18c25:0x916d6d87117b7314!8m2!3d49.2915486!4d-123.1349856!16s%2Fm%2F04yjq63?entry=ttu">
+            For business hours and temporary closures, please check here.</a>
+        <div class="footer-buttons">
+            <button><a href="tel:+16046827568"><img src="./assets/phone.png" alt="phonenumber">+16046827568</a></button>
+            <br>
+            <button><a
+                    href="https://www.google.com/maps/place/%E9%87%91%E5%A4%AA%E9%83%8E%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3/@49.2915486,-123.1375605,17z/data=!3m1!4b1!4m6!3m5!1s0x548671883ef18c25:0x916d6d87117b7314!8m2!3d49.2915486!4d-123.1349856!16s%2Fm%2F04yjq63?entry=ttu">
+                    <img src="./assets/map.png" alt="map">MAP</a>
+            </button>
+        </div>
+        <p class="last">&copy; 2024 Kinataro Ramen</p>
     </footer>
 </body>
 

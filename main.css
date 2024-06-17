@@ -5,25 +5,26 @@
 }
 
 html {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Raleway', Helvetica, sans-serif;
     --primary-color: #;
     --secondary-color: rgba(8, 2, 32, 0.509);
-    --third-color: rgba(211, 33, 33, 0.838);
-    --contrast-color: #ffffff;
+    --third-color: rgba(208, 34, 34, 0.838);
+    --contrast-color: #ffffffec;
     --third-color: gray;
+    --unique-color: #d5bb50;
     font-size: 16px;
 }
 
 body {
-    font-family: Helvetica, sans-serif;
+    background-image: url(./assets/ramen.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 90%;
+    background-attachment: fixed;
+    font-family: 'Raleway', Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     height: 2000px;
-    background-image: url(./assets/ramen.avif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }
 
 header {
@@ -49,7 +50,7 @@ a {
     cursor: pointer;
     position: absolute;
     top: 1vh;
-    right: 5vw;
+    right: 6vw;
 }
 
 #nav-svg {
@@ -58,7 +59,32 @@ a {
     fill: var(--contrast-color);
 }
 
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: rgba(8, 2, 32, 0.509);
+    padding-top: 1rem;
+    top: 135%;
+    left: -50%;
+    width: 250%;
+    transition: opacity 0.3s ease-in-out;
+    /* how can I delay disappearing without JS */
+}
+
+.submenu li {
+    margin-bottom: 1rem;
+}
+
+.submenu img {
+    width: 3rem;
+}
+
 .nav-bar {
+    font-weight: 300;
     display: flex;
     justify-content: space-evenly;
     background-color: rgba(8, 2, 32, 0.509);
@@ -69,28 +95,27 @@ a {
     border-radius: 10px;
 }
 
-.nav-bar li a {
+.menu-item a {
     color: #ffffff;
 }
 
-.submenu {
-    display: none;
-}
 
-#current {
-    color: rgba(211, 33, 33, 0.838);
+.selector:hover .selector a {
+    color: rgba(244, 129, 129, 0.724) !important;
 }
-
 
 .dropdown:hover .submenu {
     display: block;
 }
 
+/* main */
+
 .section1 {
     width: 100vw;
     position: relative;
-    top: -3%;
     text-align: center;
+    top: 3%;
+    padding: 9rem;
 }
 
 .section1 img {
@@ -98,19 +123,56 @@ a {
 }
 
 .section2 {
-    padding: 3rem;
-    margin-bottom: 8rem;
+    position: relative;
+    background-image: url(./assets/Ramencooking.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100;
+    background-attachment: fixed;
+    padding: 9rem 3rem;
     background-color: rgba(211, 33, 33, 0.973);
     text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    margin-bottom: 16rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.sec2-flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ramenworker {
+    width: 30vw;
+    height: auto;
 }
 
 .section2 h2 {
     color: #ffffff;
 }
 
-.under-bar {
+.under-bar1 {
+    font-weight: 400;
     border: none;
-    border-top: 2px solid black;
+    border-top: 3px solid white;
+    width: 10%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.under-bar2 {
+    border: none;
+    border-top: 3px solid #d7b73a;
     width: 10%;
     margin: 0 auto;
     padding: 1rem;
@@ -124,16 +186,20 @@ a {
 
 .section2 button a,
 .section3 button a {
+    font-weight: bold;
     font-size: 1.5rem;
     color: #ffffff;
     font-weight: lighter;
 }
 
 .section3 {
-    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f1d7e9;
+    padding: 7rem 3rem;
     text-align: center;
-    background-color: #eaeaeafa;
-    margin: 3rem 0;
 }
 
 .section3 p {
@@ -143,33 +209,40 @@ a {
 .eatin button,
 .takeout button {
     border: 0;
-    background-color: #a08a33;
+    background-color: var(--unique-color);
     width: 25rem;
     height: 3rem;
+    margin: 1rem 2rem;
 }
 
 /* section4 form */
 .section4 {
-    background-color: #fef3cb;
+    background-color: var(--contrast-color);
+    padding: 3rem;
+    margin: 3rem 0;
 }
 
-#contact-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.section4 h2 {
+    text-align: center;
 
-    grid-template-areas:
-        "name name"
-        "email email"
-        "phone phone"
-        "message message"
-        "submit ";
-    column-gap: 20px;
-    row-gap: 10px;
-    margin: 8px;
-    padding: 16px;
 }
 
 /* Grid Areas for Items (elements) */
+#contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "name name name name"
+        "email email email email"
+        "phone phone phone phone"
+        "dropdown dropdown dropdown dropdown"
+        "message message message message"
+        "submit submit submit submit";
+    column-gap: 20px;
+    row-gap: 10px;
+    margin: 3rem 25rem;
+}
+
 #name-field {
     grid-area: name;
 }
@@ -192,6 +265,11 @@ a {
 
 #submit {
     grid-area: submit;
+    border: none;
+    background-color: #d5bb50;
+    color: #ffffff;
+    height: 3rem;
+    width: 50%;
 }
 
 #contact-form label,
@@ -205,20 +283,73 @@ a {
     width: 100%;
 }
 
-#contact-form label {
-    text-align: left;
-}
-
 #contact-form input[type="text"],
 #contact-form input[type="email"],
 #contact-form input[type="tel"],
-#contact-form select,
-#contact-form textarea {
+#contact-form select {
     margin-bottom: 10px;
+    height: 3rem;
 }
 
+footer {
+    background-color: #fef3cb;
+    text-align: center;
+    display: block;
+    padding: 2rem 0;
+    position: relative;
+}
 
-@media screen and (max-width: 575px) {
+footer h2 {
+    font-weight: bold;
+}
+
+.tomap {
+    color: black;
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+footer button {
+    background-color: var(--unique-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    border: none;
+}
+
+footer button a {
+    color: white;
+}
+
+footer button a img {
+    width: 2rem;
+}
+
+.last {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    opacity: 50;
+}
+
+@media screen and (max-width: 767px) {
+
+    main {
+        overflow: hidden;
+    }
+
     #nav-svg {
         display: block;
         width: 2rem;
@@ -266,4 +397,19 @@ a {
     .section1 img {
         width: 80%;
     }
+
+    #contact-form {
+        margin: 3rem 2rem;
+    }
+
+    .tomap {
+        font-size: 1rem;
+    }
+
+    .eatin button,
+    .takeout button {
+        margin: 1rem 2rem;
+
+    }
+
 }
